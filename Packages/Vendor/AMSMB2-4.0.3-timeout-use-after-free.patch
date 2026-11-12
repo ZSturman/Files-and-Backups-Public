@@ -1,0 +1,20 @@
+--- a/AMSMB2/Context.swift (AMSMB2 4.0.3)
++++ b/AMSMB2/Context.swift
+@@ -374,6 +374,17 @@
+ 
+             if pfd.revents == 0 {
+                 if timeout > 0, Date().timeIntervalSince(startDate) > timeout {
++                    // FILES & BACKUPS PATCH: the timed-out request is still
++                    // queued in libsmb2 with pointers to this call's stack
++                    // state (CBData, buffers, stat structs). Servicing the
++                    // connection again would let a late reply write into
++                    // freed memory, so drop it now, as service() does on
++                    // libsmb2 errors. Destroying closes the socket first, so
++                    // queued callbacks see an invalid fd and return early.
++                    if let context {
++                        smb2_destroy_context(context)
++                        self.context = nil
++                    }
+                     throw POSIXError(.ETIMEDOUT)
+                 }
+                 continue

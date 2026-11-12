@@ -1,0 +1,10 @@
+title = "Public snapshot secret scanning"
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Published NIST SP 800-38A AES test vector"
+condition = "AND"
+paths = ['''Packages/Vendor/AMSMB2/Dependencies/libsmb2/lib/aes_reference\.c$''']
+regexTarget = "secret"
+regexes = ['''(?s)^\s*2b7e151628aed2a6abf7158809cf4f3c\s*$''']

@@ -1,0 +1,53 @@
+# Exclusions for the companion job `mac-workspace` (all of ~/Workspace).
+# Regenerable output only; copied into the job by
+#   fbbackup-agent add-sftp-job ... --exclude-file scripts/mac-workspace-excludes.txt
+# together with --exclude-caches and --exclude-if-present .nobackup.
+# Kept on purpose: source, Git history, release archives/exports (.xcarchive,
+# .ipa, .pkg, .zip, dist/), .xcresult evidence, databases, logs.
+# Base list: the predecessor's services/mac/restic-mac-excludes.txt (Oct 21).
+
+
+**/node_modules
+**/.venv
+**/venv
+**/.tox
+**/.gradle
+
+**/DerivedData
+**/.build
+**/Build/Intermediates.noindex
+**/Build/Products
+**/ArchiveIntermediates
+**/Index.noindex
+**/ModuleCache.noindex
+**/CompilationCache.noindex
+**/SDKExplicitPrecompiledModules
+**/SDKStatCaches.noindex
+**/SourcePackages/checkouts
+**/SourcePackages/repositories
+
+**/.next
+**/.nuxt
+**/.svelte-kit
+**/.turbo
+**/.parcel-cache
+
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+
+**/.DS_Store
+
+# Measured October 23 in ~/Workspace and not covered above
+**/src-tauri/target
+**/android/app/build
+**/android/build
+**/Pods
+**/.uv-cache
+**/.dart_tool
+**/.expo
+
+# Scratch space
+/Users/example/Workspace/Temporary

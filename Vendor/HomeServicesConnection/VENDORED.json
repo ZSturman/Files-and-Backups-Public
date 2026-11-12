@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "files": {
+    "README.md": "8a0710a953c380fe7fd273fe68878d02c5a4f0ccabbd541aa966c42e68c85774",
+    "VERSION": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03",
+    "Package.swift": "cb86926bca89c8490133ef6e32b4296fcc37573fbe1b0ea09f294080d65a7c38",
+    "Sources/HomeServicesConnection/PairingScanner.swift": "5daaf1e2adf4ee163338fe9b7507763afb6800bbdf834c4cafacc6159be05d60",
+    "Sources/HomeServicesConnection/Pairing.swift": "ea226adc939c913eb73c0f6fa0441bc84af6c55741e4d867b3d0c2e5cdb92805",
+    "Sources/HomeServicesConnection/PairingHost.swift": "bbe1d3f1e45be87841fc7721524c87739142e3fe71c6984bff6dc4facd6bd602",
+    "Sources/HomeServicesConnection/PairingView.swift": "2477badbffcec7f67d68e047bba8a328c9667d7abca3f777e9f03fc82fce233d",
+    "Tests/HomeServicesConnectionTests/InvitationTests.swift": "3c1fd994bc73e6a774ee1d108724c36e1aedbdeefbc3897356e588e0d63b6725"
+  }
+}
